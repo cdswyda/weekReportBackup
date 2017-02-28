@@ -13,7 +13,6 @@ var WeekLog = AV.Object.extend('GroupWeekLog');
 // 处理个人数据
 var handlePersonData = function(data) {
     return {
-        id:data.id,
         name: data.attributes.name,
         groupId: data.attributes.groupId,
         workList: data.attributes.workList || [],
@@ -23,7 +22,6 @@ var handlePersonData = function(data) {
 // 处理小组月计划数据
 var handleMonthPlan = function(data,type) {
     return{
-        id:data.id,
         groupName: data.attributes.groupName,
         monthPlanList:data.attributes.monthPlanList,
         monthPlanUpdate:data.attributes.monthPlanUpdate
@@ -32,8 +30,7 @@ var handleMonthPlan = function(data,type) {
 };
 // 处理小组周计划数据
 var handleweekPlan = function(data,type) {
-    return {
-        id:data.id,
+    return {        
         groupName: data.attributes.groupName,
         weekplanList :data.attributes.planList,
         weekplanUpdate : data.attributes.planUpdate
