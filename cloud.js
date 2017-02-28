@@ -30,7 +30,7 @@ var handleMonthPlan = function(data,type) {
 };
 // 处理小组周计划数据
 var handleweekPlan = function(data,type) {
-    return {        
+    return {
         groupName: data.attributes.groupName,
         weekplanList :data.attributes.planList,
         weekplanUpdate : data.attributes.planUpdate
@@ -66,6 +66,7 @@ AV.Cloud.define('memberBackup', function (request, response) {
         memberLog.set('backupDate',new Date());
         memberLog.save().then(function(){
             console.log('memberLog backup success!');
+            response.success('memberLog backup success!');
         });
     });
 });
@@ -86,6 +87,7 @@ AV.Cloud.define('weekBackup', function (request, response) {
         weekLog.set('backupDate',new Date());
         weekLog.save().then(function(){
             console.log('weekPlan backup success!');
+            response.success('weekPlan backup success!');
         });
     });
 });
@@ -105,6 +107,7 @@ AV.Cloud.define('monthBackup', function (request, response) {
         monthLog.set('backupDate',new Date());
         monthLog.save().then(function(){
             console.log('monthPlan backup success!');
+            response.success('monthPlan backup success!');
         });
     });
 });
