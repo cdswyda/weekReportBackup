@@ -15,6 +15,7 @@ var handlePersonData = function(data) {
     return {
         name: data.attributes.name,
         groupId: data.attributes.groupId,
+        updateAt: data.updatedAt,
         workList: data.attributes.workList || [],
         leaveList: data.attributes.leaveList || []
     };
